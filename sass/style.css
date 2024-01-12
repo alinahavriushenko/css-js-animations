@@ -1,0 +1,20 @@
+/* Error: Expected whitespace.
+ *    ,
+ * 34 | @media all and(max-width: #{$breakpoint__laptop}) {
+ *    |               ^
+ *    '
+ *   base\typography\_headings.scss 34:15   @import
+ *   base\typography\_typography.scss 16:9  @import
+ *   base\_base.scss 3:9                    @import
+ *   style.scss 71:9                        root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected whitespace.\a    \2577 \a 34 \2502  @media all and(max-width: #{$breakpoint__laptop}) {\a    \2502                ^\a    \2575 \a   base\\typography\\_headings.scss 34:15   @import\a   base\\typography\\_typography.scss 16:9  @import\a   base\\_base.scss 3:9                    @import\a   style.scss 71:9                        root stylesheet";
+}

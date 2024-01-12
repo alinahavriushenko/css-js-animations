@@ -1,0 +1,355 @@
+.parallax-video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 806px;
+
+  #background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      animation: animationDown 1s ease-in-out;
+    }
+
+    #fallback-image {
+      position: relative;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0 auto;
+      animation: animationDown 1s ease-in-out;
+        }
+
+  #parallax-image {
+  z-index: 10;
+  animation: sectionAnimationUp 1s ease-in-out;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  top: 380px;
+  left: 50%;
+  img {
+    animation: floatAnimation 3s infinite;
+    max-width: 100%;
+    display: block;
+  }
+}
+}
+
+
+.story {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: sectionAnimationUp 2s;
+  z-index: 10;
+  background-color: $color__background-body;
+    overflow: hidden;
+  h2 {
+    &::before {
+      content: url('./assets/images/sunflower_leaves.png');
+      position: absolute;
+      left: 0;
+      top: 1.8em;
+      z-index: -1;
+    }
+    &::after {
+      content: url('./assets/images/Sunflower.png');
+      position: absolute;
+      left: 0.7em;
+      top: 6em;
+      animation: rotateFlower 15s linear infinite;
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    font-size: 15px;
+    padding-bottom: 2em;
+    background-color: $color__background-body;
+      overflow: hidden;
+    &::before {
+      content: url('./assets/images/hibiscus_leaves.png');
+      position: absolute;
+      left: 50%;
+      top: 8em;
+      z-index: -1;
+    }
+    &::after {
+      content: url('./assets/images/Hibiscus.png');
+      position: absolute;
+      left: calc(50% + 414px);
+      top: 2em;
+      animation: rotateFlower 15s linear infinite;
+    }
+  }
+
+  #characters {
+    margin: 6em;
+    display: flex;
+    text-align: center;
+    h3 {
+      background-image: url("./assets/images/orange_characters_bg.png");
+    }
+    div {
+      flex: 1
+    }
+    .other-characters {
+      display: flex;
+      flex-wrap: wrap;
+      figure {
+        width: 50%;
+        padding: 2% 10%;
+        margin: 0;
+      }
+    }
+  }
+  #place {
+    display: flex;
+    background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+    width: 100%;
+    min-height: 699px;
+    background-size: cover;
+    &::before {
+      content: url("./assets/images/big_cloud.png");
+      position: absolute;
+      left: 1036px;
+      top: 1445px;
+      filter: blur(1.1rem);
+    }
+    &::after {
+      content: url("./assets/images/little_cloud.png");
+      position: absolute;
+      left: 812px;
+      top: 1600px;
+      filter: blur(1rem);
+    }
+    h3 {
+      background-image: url("./assets/images/orange_place_bg.png");
+      margin-bottom: -1em;}
+    > div {
+      max-width: 580px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 6em;
+      p {
+        padding-left: 5em;
+      }
+    }
+  }
+}
+
+
+#studio {
+  position: relative;
+  margin-top: 3em;
+  animation: sectionAnimationUp 3s;
+  h2 {
+    overflow: hidden;
+    background-image: url("./assets/images/purple_studio_bg.png");
+    &::before {
+      content: url('./assets/images/random_flower.png');
+      position: absolute;
+      left: -1em;
+      top: 0;
+      animation: rotateFlower 15s linear infinite;
+    }
+    &::after {
+      content: url('./assets/images/flower.png');
+      position: absolute;
+      right: 1em;
+      top: 1.2em;
+      animation: rotateFlower 15s linear infinite;
+    }
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    width: 66.66%;
+    margin: auto;
+    &::before {
+      content: url('./assets/images/trple-leaf.png');
+      position: absolute;
+      left: calc(50% - 17.225px);
+      top: 40%;
+    }
+    p {
+    width: 44.5%
+    }
+  }
+}
+
+#oscars {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  animation: sectionAnimationUp 2s;
+
+  h3 {
+    background-image: url("./assets/images/orange_oscars_bg.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    text-align: left;
+    text-wrap: balance;
+    white-space: unset;
+    max-inline-size: 33ch;
+    margin-left: 5%;
+    }
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 130px;
+  .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 350px;
+      height: 350px;
+      img {
+          display: block;
+          width: 100%;
+        }
+    }
+}
+
+
+@media all and (max-width: #{$breakpoint__laptop}) {
+  .story {
+    &__article {
+      &::before {
+        left: 40%;
+        top: 8em;
+      }
+      &::after {
+        left: calc(40% + 414px);
+        top: 2em;
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__tablet}) {
+  .story {
+    &__article {
+      &::before {
+        left: 33%;
+        top: 15em;
+      }
+
+      &::after {
+        content: url('./assets/images/Hibiscus.png');
+        position: absolute;
+        left: calc(33% + 414px);
+        top: 9em;
+        animation: rotateFlower 15s linear infinite;
+      }
+    }
+    #characters {
+      flex-direction: column;
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+  .story {
+    h2{
+      &::before {
+        content: '';
+      }
+
+      &::after {
+        content: '';
+      }
+    }
+    &__article {
+      width: 80%;
+      &::before {
+        content: '';
+      }
+
+      &::after {
+        content: '';
+      }
+    }
+    #characters {
+      flex-direction: column;
+    }
+    #place {
+      > div {
+        margin: auto;
+        width: 75%;
+      }
+    }
+  }
+  #studio {
+    h2 {
+      &::after {
+        content: '';
+      }
+    }
+    > div {
+      &::before {
+        content: '';
+      }
+      flex-direction: column;
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__large_phone}) {
+  #studio {
+    h2 {
+      &::before{
+        content: '';
+      }
+    }
+  }
+
+    .main-navigation {
+      height: 80px;
+      display: flex;
+      justify-content: space-between !important;
+      .site-title {
+        padding-left: 20px;
+      }
+    }
+
+  .parallax-video {
+    height: 100%;
+    #background-video {
+        display: none;
+      }
+     #fallback-image {
+       height: 700px;
+     }
+    #parallax-image{ img {
+      max-width: 70%;
+    }}
+  }
+
+    #oscars h3{
+      margin: 0 auto;
+    }
+}

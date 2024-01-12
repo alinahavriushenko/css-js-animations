@@ -1,0 +1,158 @@
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+}
+
+.main-navigation {
+	z-index: 1000;
+	background-color: $color__navigation_bg;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+
+	#menu-links {
+		display: none;
+		position: fixed;
+		top: 78px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $color__background-body;
+		z-index: 999;
+		padding: 15px;
+		box-sizing: border-box;
+		animation: animationDown 1s ease-in-out;
+		ul {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+		li {
+			list-style: none;
+			margin: 20px 0;
+			padding: 0;
+			text-decoration: none;
+			color: $color__link;
+			font-size: 50px;
+			a {
+				text-decoration: none;
+				color: $color__link;
+				&:hover {
+				text-shadow: 3px 3px 5px $color__navigation_bg;
+					}
+				}
+		img {
+			position: relative;
+			padding: 0;
+			width: 25%;
+			left: 35%;
+			top: 26px;
+				}
+		}
+
+	#menu-footer {
+		margin-top: -130px;
+		font-size: 14px;
+		z-index: 1001;
+		text-align: center;
+			}
+	}
+
+#menu-icon {
+	display: block;
+	position: absolute;
+	left: 80%;
+	font-size: 30px;
+	z-index: 1001;
+	color: #333;
+	}
+}
+
+	#story-menu {
+		&::before {
+		content: url("./assets/images/orchid.png");
+		left: -627px;
+		top: -213px;
+		position: absolute;
+		animation: rotateFlower 10s linear infinite;
+			}
+		&::after {
+		content: url("./assets/images/cat.png");
+		left: -229px;
+		top: -94px;
+		position: absolute;
+		animation: floatAnimation 10s linear infinite;
+			}
+		}
+
+	#characters-menu {
+		&::before {
+		content: url("./assets/images/flower.png");
+		left: -277px;
+		top: -2px;
+		position: absolute;
+		animation: rotateFlower 10s linear infinite;
+			}
+		&::after {
+		content: url("./assets/images/random_flower.png");
+		left: 701px;
+		top: -248px;
+		position: absolute;
+		animation: rotateFlower 10s linear infinite;
+			}
+		}
+
+	#place-menu {
+		&::before {
+		content: url("./assets/images/cat-2.png");
+		left: 449px;
+		top: -63px;
+		position: absolute;
+		animation: floatAnimation 10s linear infinite;
+			}
+		&::after {
+		content: url("./assets/images/cat-3.png");
+		left: -470px;
+		top: 260px;
+		position: absolute;
+		animation: floatAnimation 10s linear infinite;
+			}
+		}
+
+	#studio-menu {
+		&::before {
+		content: url("./assets/images/hibiscus_footer.png");
+		left: 530px;
+		top: -100px;
+		position: absolute;
+		animation: rotateFlower 20s linear infinite;
+			}
+		&::after {
+		content: url("./assets/images/Sunflower.png");
+		left: 459px;
+		top: -515px;
+		position: absolute;
+		animation: rotateFlower 10s linear infinite;
+			}
+		}
+
+
+@media all and (max-width: #{$breakpoint__large_phone}) {
+
+	.main-navigation {
+		height: 80px;
+		display: flex;
+		justify-content: space-between !important;
+
+		.site-title {
+			padding-left: 20px;
+		}
+		#menu-links li {
+			font-size: 30px;
+		}
+	}
+
+
+}
